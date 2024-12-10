@@ -8,8 +8,6 @@ import dotenv from 'dotenv';
 import { taskRoutes } from './routes/taskRoutes.js';
 
 
-
-
 dotenv.config();
 const PORT = process.env.PORT || 8080;
 const db = process.env.MONGODB_URI
@@ -23,9 +21,9 @@ const options = {
     },
     servers: [
       {
-        url: `https://task-mangment-api.vercel.app/`,
-        },
-        
+        url: `http://localhost:${PORT}/`,
+      },
+      
     ],
     components: {
       schemas: {
@@ -66,16 +64,18 @@ const options = {
       },
     },
   },
-  apis: ["./routes/*.js"], 
+  apis: ["./routes/*.js"], // Add this to include route documentation
 };
 
 
 const app = express();
 app.use(express.json())
 app.use(express.static("/api-docs"));
-const specs = swaggerJsdoc(options);
-app.use('/api/docs', swaggerui.serve, swaggerui.setup(specs));
 
+const specs = swaggerJsdoc(options);
+
+routes.use('/api-docs', swaggerui.serve);
+routes.get('/api-docs', swaggerui.setup(specs));
 
 
 // starter server url 
