@@ -1,6 +1,6 @@
 import express from 'express';
-import swaggerJsdoc from 'swagger-jsdoc';
-import swaggerui from "swagger-ui-express";
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 
 import mongoose from 'mongoose';
 
