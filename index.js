@@ -21,7 +21,7 @@ const options = {
     },
     servers: [
       {
-        url: `https://task-mangment-api.vercel.app/`,
+        url: `http://localhost:${PORT}/`,
       },
       
     ],
@@ -70,19 +70,22 @@ const options = {
 
 const app = express();
 app.use(express.json())
+
+
+
 const specs = swaggerJsdoc(options);
 app.use('/api/docs', swaggerui.serve, swaggerui.setup(specs));
 
 
-
-
 // starter server url 
 app.get('/', (req,res) => {
-    res.send("welcome to backed")
+    res.send("welcome to backend")
 })
 
 // routes defined 
 app.use('/tasks', taskRoutes);
+app.use('/api/docs', swaggerui.serve, swaggerui.setup(specs));
+
 
 
 // db connections 
