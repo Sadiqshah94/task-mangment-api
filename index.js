@@ -1,13 +1,15 @@
-import express from 'express';
-const swaggerJsdoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerui from "swagger-ui-express";
 
+import express from 'express';
 import mongoose from 'mongoose';
 
 
 
 import dotenv from 'dotenv';
 import { taskRoutes } from './routes/taskRoutes.js';
+
+
 
 
 dotenv.config();
@@ -72,7 +74,7 @@ const options = {
 
 const app = express();
 app.use(express.json())
-//app.use(express.static("/api-docs"));
+app.use(express.static("/api-docs"));
 
 
 const specs = swaggerJsdoc(options);
