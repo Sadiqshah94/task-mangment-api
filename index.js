@@ -1,7 +1,9 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerui from "swagger-ui-express";
+
+import mongoose from 'mongoose';
+
 
 
 import dotenv from 'dotenv';
