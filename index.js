@@ -72,7 +72,7 @@ const options = {
 
 const app = express();
 app.use(express.json())
-app.use(express.static("/api-docs"));
+//app.use(express.static("/api-docs"));
 
 
 const specs = swaggerJsdoc(options);
