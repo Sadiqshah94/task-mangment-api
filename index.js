@@ -70,6 +70,7 @@ const options = {
 
 const app = express();
 app.use(express.json())
+app.use(express.static("/api-docs"));
 const specs = swaggerJsdoc(options);
 app.use('/api/docs', swaggerui.serve, swaggerui.setup(specs));
 
