@@ -23,9 +23,7 @@ const options = {
       {
         url: `http://localhost:${PORT}/`,
         },
-        {
-        url: "https://task-mangment-api.vercel.app/", 
-      },
+        
     ],
     components: {
       schemas: {
@@ -66,7 +64,7 @@ const options = {
       },
     },
   },
-  apis: ["./routes/*.js"], // Add this to include route documentation
+  apis: ["./routes/*.js"], 
 };
 
 

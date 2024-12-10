@@ -8,12 +8,12 @@
   ],
   "routes": [
     {
-      "src": "/api/docs/(.*)",
-      "dest": "index.js"
-    },
-    {
       "src": "/(.*)",
       "dest": "index.js"
     }
-  ]
+  ],
+  "env": {
+    "PORT": "8080",
+    "MONGODB_URI": "mongodb+srv://sadiqshahdev234:Nbs017u4QRKPEQwF@cluster0.tc0gp.mongodb.net/task_mangment"
+  }
 }
